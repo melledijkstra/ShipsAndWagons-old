@@ -243,3 +243,7 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+/Resources
+/splash.psd
+/graph_paper.psd
+/close_icon.psd

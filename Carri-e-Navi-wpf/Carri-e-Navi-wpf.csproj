@@ -55,6 +55,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Dashboard.xaml.cs">
+      <DependentUpon>Dashboard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Player.cs" />
+    <Compile Include="Map.xaml.cs">
+      <DependentUpon>Map.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Transport\Convoys\SimpleConvoy.cs" />
+    <Compile Include="Transport\TransportBase.cs" />
+    <Page Include="Dashboard-window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dashboard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -63,10 +80,18 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Dashboard-window.xaml.cs">
+      <DependentUpon>Dashboard-window.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Game.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Map.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -94,14 +119,51 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <SplashScreen Include="images\background.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </SplashScreen>
+    <SplashScreen Include="images\splash.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="images\icons\settings_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\icons\close_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\backgrounds\dashboard_background.png" />
+    <Resource Include="images\backgrounds\mainwindow_background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\backgrounds\mainwindow_background-italian.png" />
+    <Resource Include="images\icons\close_icon-alt.png" />
+    <Resource Include="images\icons\map_icon.png" />
+    <Resource Include="images\icons\settings_icon-alt.png" />
+    <Resource Include="images\icons\ship_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\icons\convoy_icon_sketch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\icons\weather-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\icons\drag_icon_sketch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\backgrounds\dashboard_background_shadow.png" />
+    <Resource Include="images\backgrounds\mainwindow_background_shadow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Items\" />
+    <Folder Include="Locations\" />
+    <Folder Include="Transport\Ships\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\backgrounds\map.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

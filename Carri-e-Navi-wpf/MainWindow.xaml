@@ -5,8 +5,37 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Carri_e_Navi_wpf"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="500" WindowStyle="None" WindowStartupLocation="CenterScreen" AllowsTransparency="True" ResizeMode="NoResize">
-    <Grid>
-            
+        Title="MainWindow" Height="416" Width="550" WindowStyle="None" WindowStartupLocation="CenterScreen" AllowsTransparency="True" ResizeMode="NoResize">
+    <Window.Background>
+        <ImageBrush ImageSource="images/backgrounds/mainwindow_background_shadow.png"/>
+    </Window.Background>
+    <Grid x:Name="Context">
+        <Button x:Name="newGameBtn" 
+                HorizontalAlignment="Center" 
+                Margin="0,178,0,172" 
+                VerticalAlignment="Center" 
+                FontSize="50" Padding="5" 
+                Width="auto" Click="NewGameBtn_OnClick">New Save</Button>
+
+        <Button x:Name="loadSaveBtn" 
+                HorizontalAlignment="Center"
+                Margin="0,258,0,88" 
+                FontSize="50" 
+                Padding="5" 
+                Height="auto">Load Save</Button>
+
+        <Button x:Name="settingsBtn" HorizontalAlignment="Left" Margin="408,323,0,56" Width="36">
+            <Image Source="images/icons/settings_icon.png"></Image>
+        </Button>
+
+        <Button x:Name="closeBtn"
+                HorizontalAlignment="Left" 
+                Margin="43,23,0,0" 
+                VerticalAlignment="Top" 
+                Width="31" 
+                Height="31"
+                Click="CloseBtn_OnClick">
+            <Image Source="images/icons/close_icon.png" Width="auto" Height="auto"></Image>
+        </Button>
     </Grid>
 </Window>
