@@ -34,6 +34,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ExtendedButton">
+      <HintPath>..\..\ExtendedButton\ExtendedButton\obj\Debug\ExtendedButton.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -55,24 +58,29 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Dashboard.xaml.cs">
+    <Compile Include="UI\SettingsWindow.xaml.cs">
+      <DependentUpon>SettingsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Dashboard.xaml.cs">
       <DependentUpon>Dashboard.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Entities\Player.cs" />
-    <Compile Include="Map.xaml.cs">
-      <DependentUpon>Map.xaml</DependentUpon>
+    <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="UI\MapPage.xaml.cs">
+      <DependentUpon>MapPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Transport\Convoys\SimpleConvoy.cs" />
-    <Compile Include="Transport\TransportBase.cs" />
-    <Page Include="Dashboard-window.xaml">
+    <Page Include="UI\SettingsWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Dashboard.xaml">
+    <Page Include="UI\PrimaryWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainWindow.xaml">
+    <Page Include="UI\Dashboard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\StartWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -80,15 +88,15 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Dashboard-window.xaml.cs">
-      <DependentUpon>Dashboard-window.xaml</DependentUpon>
+    <Compile Include="UI\PrimaryWindow.xaml.cs">
+      <DependentUpon>PrimaryWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Game.cs" />
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+    <Compile Include="UI\Shapes\Hexagon.cs" />
+    <Compile Include="UI\StartWindow.xaml.cs">
+      <DependentUpon>StartWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Map.xaml">
+    <Page Include="UI\MapPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -112,6 +120,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <Resource Include="Moon Flower.ttf" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -157,12 +166,22 @@
     <Resource Include="images\backgrounds\mainwindow_background_shadow.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Items\" />
-    <Folder Include="Locations\" />
-    <Folder Include="Transport\Ships\" />
+    <ProjectReference Include="..\SAWLibrary\SAWLibrary.csproj">
+      <Project>{5DE681D5-0CE3-47ED-9799-CE27FDBFD711}</Project>
+      <Name>SAWLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="images\backgrounds\map.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\icons\back_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\icons\save_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UI\Controls\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
